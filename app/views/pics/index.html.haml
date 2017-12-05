@@ -1,3 +1,12 @@
-- @pics.each do |pic|
-  = link_to (image_tag pic.image.url(:thumb)), pic
-  %h2= link_to pic.title, pic
+.col-md-6.col-md-offset-3
+  -# masonry-railsを入れたので使える
+  #pics.transitions-enabled 
+    - @pics.each do |pic|
+      .box.panel.panel-default
+        = link_to (image_tag pic.image.url(:medium)), pic
+        %h2= link_to pic.title, pic
+  
+  -#
+    masonry-railsを入れたから使えるようになったもの
+    - .transitions-enabled
+    - .box
